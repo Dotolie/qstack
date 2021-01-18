@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>screen1.qml</file>
+        <file>1.jpg</file>
+        <file>3.jpg</file>
+        <file>screen2.qml</file>
+        <file>4.jpg</file>
+        <file>6.jpg</file>
+        <file>7.jpg</file>
+        <file>set-button.png</file>
+        <file>set-button2.png</file>
+        <file>vib-button.png</file>
+        <file>vib-button2.png</file>
+    </qresource>
+</RCC>
