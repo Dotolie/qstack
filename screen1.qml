@@ -2,15 +2,10 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 
 Item {
-    width: 1280
-    height: 800
-
     Image {
-        id: image
-        x: 0
-        y: 0
-        width: 1280
-        height: 800
+        id: image2
+        width: parent.width
+        height: parent.height
         layer.enabled: true
         antialiasing: true
         anchors.fill: parent

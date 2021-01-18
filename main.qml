@@ -12,7 +12,7 @@ Window {
     id: window
     visible: true
     width: 1280
-    height: 800
+    height: 720
     title: qsTr("Hello World")
 
     StackView
@@ -23,12 +23,26 @@ Window {
         {
             Image {
                 id: image
-                width: 1280
-                height: 800
+                width: parent.width
+                height: parent.height
                 z: 0
                 visible: true
                 fillMode: Image.PreserveAspectFit
                 source: "1.jpg"
+
+                Label {
+                    id: label
+                    x: 87
+                    y: 332
+                    width: 146
+                    height: 41
+                    color: "#6a6a6a"
+                    text: qsTr("12345")
+                    clip: true
+                    font.bold: true
+                    horizontalAlignment: Text.AlignRight
+                    font.pointSize: 27
+                }
             }
 
             Image
@@ -81,9 +95,7 @@ Window {
                    }
                 }
             }
-
         }
-
     }
 
     InputPanel {
