@@ -163,54 +163,44 @@ Window {
                 }
             }
 
-            Image
-            {
-               id:vibButton
-               x: 1000
-               y: 200
-               width: 200
-               height: 70
-               source:"vib-button.png"
-               MouseArea{
-                   anchors.fill: parent
-                   onReleased: {
-                       if(!mbImageClicked){
-                            mbImageClicked = true;
-                            vibButton.source = "vib-button.png"
-//                            stackView.push(Qt.resolvedUrl("qrc:/screen1.qml"))
-                        }
-                   }
-                   onPressed:{
-                       if(mbImageClicked){
-                           mbImageClicked = false;
-                           vibButton.source = "vib-button2.png"
-                       }
-                   }
+            Item {
+                Image {
+                    id: imgSetup
+                    x: 1000
+                    y: 620
+                    width: 200
+                    height: 70
+                    z: 99
+                    source: btnSetup.pressed ? "set-button2.png" : "set-button.png"
+                }
+                Button {
+                    id: btnSetup;
+                    x: imgSetup.x+10
+                    y: imgSetup.y+10
+                    width: imgSetup.width-20
+                    height: imgSetup.height-20
+                    onClicked: {
+                        stackView.push(Qt.resolvedUrl("qrc:/screen1.qml"))
+                    }
                 }
             }
-            Image
-            {
-               id:settingButton
-               x: 1000
-               y: 650
-               width: 200
-               height: 70
-               source:"set-button.png"
-               MouseArea{
-                   anchors.fill: parent
-                   onReleased: {
-                       if(!mbImageClicked2){
-                            mbImageClicked2 = true;
-                            settingButton.source = "set-button.png"
-                            stackView.push(Qt.resolvedUrl("qrc:/screen1.qml"))
-                        }
-                   }
-                   onPressed:{
-                       if(mbImageClicked2){
-                           mbImageClicked2 = false;
-                           settingButton.source = "set-button2.png"
-                       }
-                   }
+
+            Item {
+                Image {
+                    id: imgVib
+                    x: 1000
+                    y: 200
+                    width: 200
+                    height: 70
+                    z: 99
+                    source: btnVib.pressed ? "vib-button2.png" : "vib-button.png"
+                }
+                Button {
+                    id: btnVib;
+                    x: imgVib.x+10
+                    y: imgVib.y+10
+                    width: imgVib.width-20
+                    height: imgVib.height-20
                 }
             }
         }
