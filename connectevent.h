@@ -3,6 +3,7 @@
 
 #include <QQuickView>
 #include <QObject>
+#include <iostream>
 
 class ConnectEvent : public QObject
 {
@@ -19,6 +20,10 @@ private:
 
 signals:
     void cppSignaltestData(QVariant);
+
+public slots:
+    void cppSlotStringData(QVariant stringData);
+    void cppSlotintData(QVariant intData);
 };
 
 #endif // CONNECTEVENT_H

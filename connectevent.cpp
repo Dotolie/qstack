@@ -10,7 +10,6 @@ ConnectEvent::~ConnectEvent()
 
 void ConnectEvent::cppSignaltoQmlSlot()
 {
-    QObject::connect(this, SIGNAL(cppSignaltestData(QVariant)), mMainView, SLOT(qmlSlotTestData(QVariant) ));
 
 
     emit cppSignaltestData(3);
@@ -21,5 +20,21 @@ void ConnectEvent::cppSignaltoQmlSlot()
 void ConnectEvent::setWindow(QQuickWindow *Window)
 {
     mMainView = Window;
-    cppSignaltoQmlSlot();
+
+    QObject::connect(this, SIGNAL(cppSignaltestData(QVariant)), mMainView, SLOT(qmlSlotTestData(QVariant) ));
+    QObject::connect(mMainView, SIGNAL(qmlSignalStringData(QVariant)), this, SLOT(cppSlotStringData(QVariant) ));
+    QObject::connect(mMainView, SIGNAL(qmlSignalintData(QVariant)), this, SLOT(cppSlotintData(QVariant) ));
+}
+
+void ConnectEvent::cppSlotStringData(QVariant stringData )
+{
+    QString data = stringData.toString();
+
+    qDebug() << data;
+}
+
+void ConnectEvent::cppSlotintData(QVariant intData )
+{
+    int data = intData.toInt();
+    qDebug() << data;
 }

@@ -13,7 +13,10 @@ Window {
     visible: true
     width: 1280
     height: 720
-    title: qsTr("Hello World")
+    title: qsTr("Qstack")
+
+    signal qmlSignalStringData(var stringData);
+    signal qmlSignalintData(var intData);
 
     function qmlSlotTestData(data) {
         console.log( "qmlSlotTestData=" + data);

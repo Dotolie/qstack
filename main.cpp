@@ -25,5 +25,7 @@ int main(int argc, char *argv[])
     QObject *root = engine.rootObjects()[0];
     event->setWindow(qobject_cast<QQuickWindow*>(root));
 
+    event->cppSignaltoQmlSlot();
+
     return app.exec();
 }

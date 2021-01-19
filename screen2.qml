@@ -20,6 +20,8 @@ Item {
         height: 72
         text:"go preious screen"
         onClicked: {
+            qmlSignalintData(1000)
+            qmlSignalStringData("qml string signal")
             stackView.pop()
         }
     }
