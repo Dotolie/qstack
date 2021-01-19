@@ -1,5 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <connectevent.h>
+#include <QQuickView>
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +19,11 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+
+    ConnectEvent *event = new ConnectEvent();
+
+    QObject *root = engine.rootObjects()[0];
+    event->setWindow(qobject_cast<QQuickWindow*>(root));
 
     return app.exec();
 }

@@ -15,6 +15,11 @@ Window {
     height: 720
     title: qsTr("Hello World")
 
+    function qmlSlotTestData(data) {
+        console.log( "qmlSlotTestData=" + data);
+        textP03.text = data;
+    }
+
     StackView
     {
         id:stackView
@@ -30,18 +35,131 @@ Window {
                 fillMode: Image.PreserveAspectFit
                 source: "1.jpg"
 
-                Label {
-                    id: label
+                Text {
+                    id: textP03
                     x: 87
                     y: 332
+                    z:99
                     width: 146
                     height: 41
                     color: "#6a6a6a"
-                    text: qsTr("12345")
-                    clip: true
+                    text: "123"
                     font.bold: true
                     horizontalAlignment: Text.AlignRight
                     font.pointSize: 27
+                }
+                Rectangle {
+                    id: rectP03
+                    x: textP03.x
+                    y: textP03.y
+                    width: textP03.width
+                    height: textP03.height
+                    color: "white"
+                }
+                Text {
+                    id: textP05
+                    x: 360
+                    y: 332
+                    z:99
+                    width: 146
+                    height: 41
+                    color: "#6a6a6a"
+                    text: "456"
+                    font.bold: true
+                    horizontalAlignment: Text.AlignRight
+                    font.pointSize: 27
+                }
+                Rectangle {
+                    id: rectP05
+                    x: textP05.x
+                    y: textP05.y
+                    width: textP05.width
+                    height: textP05.height
+                    color: "white"
+                }
+                Text {
+                    id: textP10
+                    x: 640
+                    y: 332
+                    z:99
+                    width: 146
+                    height: 41
+                    color: "#6a6a6a"
+                    text: "789"
+                    font.bold: true
+                    horizontalAlignment: Text.AlignRight
+                    font.pointSize: 27
+                }
+                Rectangle {
+                    id: rectP10
+                    x: textP10.x
+                    y: textP10.y
+                    width: textP10.width
+                    height: textP10.height
+                    color: "white"
+                }
+                Text {
+                    id: textP25
+                    x: 87
+                    y: 586
+                    z:99
+                    width: 146
+                    height: 41
+                    color: "#6a6a6a"
+                    text: "123"
+                    font.bold: true
+                    horizontalAlignment: Text.AlignRight
+                    font.pointSize: 27
+                }
+                Rectangle {
+                    id: rectP25
+                    x: textP25.x
+                    y: textP25.y
+                    width: textP25.width
+                    height: textP25.height
+                    color: "white"
+                }
+                Text {
+                    id: textP50
+                    x: 360
+                    y: 586
+                    z:99
+                    width: 146
+                    height: 41
+                    color: "#6a6a6a"
+                    text: "456"
+                    font.bold: true
+                    horizontalAlignment: Text.AlignRight
+                    font.pointSize: 27
+                }
+                Rectangle {
+                    id: rectP50
+                    x: textP50.x
+                    y: textP50.y
+                    width: textP50.width
+                    height: textP50.height
+                    color: "white"
+                }
+                Text {
+                    id: textP100
+                    x: 640
+                    y: 586
+                    z:99
+                    width: 146
+                    height: 41
+                    color: "#6a6a6a"
+                    text: "789"
+                    font.bold: true
+                    horizontalAlignment: Text.AlignRight
+                    font.pointSize: 27
+                }
+                Rectangle {
+                    id: rectP100
+                    x: textP100.x
+                    y: textP100.y
+                    width: textP100.width
+                    height: textP100.height
+                    color: "white"
                 }
             }
 
